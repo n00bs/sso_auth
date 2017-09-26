@@ -141,11 +141,11 @@ REST_FRAMEWORK_SSO = {
     'VERIFY_SESSION_TOKEN': True,
     'EXPIRATION_LEEWAY': 0,
     'SESSION_EXPIRATION': None,
-    'AUTHORIZATION_EXPIRATION': datetime.timedelta(seconds=300),
+    'AUTHORIZATION_EXPIRATION': datetime.timedelta(seconds=3000),
 
     'IDENTITY': 'sso_auth',
     'SESSION_AUDIENCE': ['sso_auth'],
-    'AUTHORIZATION_AUDIENCE': ['sso_auth', 'otherapp'],
+    'AUTHORIZATION_AUDIENCE': ['sso_auth', 'sso_client_one'],
     'ACCEPTED_ISSUERS': ['sso_auth'],
     'PUBLIC_KEYS': {
         'sso_auth': 'keys/public_key.pem',
