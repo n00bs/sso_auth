@@ -129,7 +129,7 @@ LOGIN_REDIRECT_URL = '/'
 
 REST_FRAMEWORK_SSO = {
     'CREATE_SESSION_PAYLOAD': 'rest_framework_sso.utils.create_session_payload',
-    'CREATE_AUTHORIZATION_PAYLOAD': 'rest_framework_sso.utils.create_authorization_payload',
+    'CREATE_AUTHORIZATION_PAYLOAD': 'sso_auth.authentication.create_authorization_payload',
     'ENCODE_JWT_TOKEN': 'rest_framework_sso.utils.encode_jwt_token',
     'DECODE_JWT_TOKEN': 'rest_framework_sso.utils.decode_jwt_token',
     'AUTHENTICATE_PAYLOAD': 'rest_framework_sso.utils.authenticate_payload',
