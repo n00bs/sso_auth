@@ -11,12 +11,11 @@ class ObtainAuthorizationTokenView(ObtainAuthorizationTokenView):
     """
     def get(self, request, *args, **kwargs):
         response = self.post(request, args, kwargs)
-        successful_redirect_url = self.request.GET.get('successful_redirect_url', None)
-        if successful_redirect_url:
-            # redirect the response token to successful_redirect_url
-            print successful_redirect_url
-            token = "JWT " + response.data["token"]
-            response = HttpResponse(successful_redirect_url)
-            response["Authorization"] = token
-            import pdb; pdb.set_trace()
+        login_at = self.request.GET.get('login_at', None)
+        return_to = self.request.GET.get('return_to', None)
+        if login_at and return_to:
+            # redirect the response token to the client
+            token = response.data["token"]
+            end_url = login_at + "?return_to=" + return_to + "&token=" + token
+            response = HttpResponseRedirect(end_url)
         return response
