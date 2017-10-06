@@ -14,7 +14,8 @@ setup(
     install_requires=[
         'Django',
         'djangorestframework',
-        'djangorestframework-jwt'
+        'djangorestframework-jwt',
+        'djangorestframework-sso'
     ],
     license='Apache License, Version 2.0',  # example license
     description='A django app for SAML2 to JWT auth',
